@@ -3,14 +3,19 @@ package com.example.plantatreeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.plantatreeapp.ui.theme.PlantATreeAppTheme
+import com.example.plantatreeapp.ui.theme.my_green
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +27,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+//                    Greeting("Android")
+                    PlantApp()
                 }
             }
         }
@@ -30,17 +36,30 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
+fun PlantApp(){
+    val brush = Brush.verticalGradient(listOf(Color.White, Color(0xFF367020)))
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(brush = brush)) {
+        Column() {
+            Text(text = "One Gift, One Tree, One Planet")
+            Text(text = "Plant a billion Trees")
+
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     PlantATreeAppTheme {
-        Greeting("Android")
+//        Greeting("Android")
+        PlantApp()
     }
 }
