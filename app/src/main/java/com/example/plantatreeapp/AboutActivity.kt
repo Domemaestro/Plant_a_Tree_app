@@ -5,12 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -51,30 +53,29 @@ class AboutActivity : ComponentActivity() {
 //    )
 //}
 fun AboutTab(){
-    Column(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxWidth()) {
-            //section 1
-            Row(modifier = Modifier
-                .fillMaxWidth()
-                .height(230.dp)) {
-                Box(modifier = Modifier.fillMaxWidth()) {
-                    val image = painterResource(id = R.drawable.kerela)
-                    Image(painter = image, contentDescription = null, contentScale = ContentScale.Crop)
-                    Box(modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.BottomStart) {
-                        Text(text = "Kerala",
-                        color = Color.White, modifier = Modifier.padding(start = 16.dp, bottom = 30.dp),
-                            fontSize = 47.sp
-                        )
-                    }
-                }
+    Box(modifier = Modifier.fillMaxSize()) {
+        //top Box
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .height(300.dp)) {
+            val image = painterResource(id = R.drawable.kerela)
+            Image(painter = image, contentDescription = null, contentScale = ContentScale.Crop)
+
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart) {
+                Text(text = "Kerala",
+                color = Color.White,
+                fontSize = 47.sp, modifier = Modifier.padding(start = 16.dp, bottom = 50.dp))
             }
         }
-        Column(modifier = Modifier.fillMaxWidth()) {
-            //section 2
-
+        //second Box
+        Box(modifier = Modifier.fillMaxSize()) {
+            Card(elevation = CardDefaults.cardElevation(20.dp),
+            shape = RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp),
+                modifier = Modifier.fillMaxSize().padding(top = 260.dp)
+            ) {
+                
+            }
         }
-        
     }
 }
 
