@@ -72,6 +72,7 @@ fun AboutTab(){
         }
         Column(modifier = Modifier.fillMaxWidth()) {
             //section 2
+
         }
         
     }

@@ -116,7 +116,7 @@ fun PlantApp(){
                                 modifier = Modifier.padding(start = 16.dp)
                             )
                             Text(text ="Kerala is actively promoting tree planting to combat deforestation and climate change, and has launched initiatives like Haritha Keralam Mission to increase the forest cover.",
-                                color = Color.White, modifier = Modifier.padding(16.dp), fontWeight = FontWeight.ExtraBold)
+                                color = Color.White, modifier = Modifier.padding(16.dp), fontWeight = FontWeight.Bold)
                         }
                     }
                 }
