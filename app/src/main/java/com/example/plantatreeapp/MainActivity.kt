@@ -74,7 +74,7 @@ fun PlantApp(){
         .background(brush = brush)) {
         Column(modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 80.dp)) {
+            .padding(top = 60.dp)) {
             //Top part Section 1
             Text(
                 text = "One Gift, One Tree, One Planet"
@@ -116,7 +116,7 @@ fun PlantApp(){
                         )
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart) {
                         Column() {
-                            Text(text = "Kerela",
+                            Text(text = "Kerala",
                                 color = Color.White,
                                 fontSize = 42.sp,
                                 modifier = Modifier.padding(start = 16.dp)
