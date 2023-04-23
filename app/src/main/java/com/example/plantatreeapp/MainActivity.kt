@@ -1,5 +1,6 @@
 package com.example.plantatreeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -30,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -129,7 +131,11 @@ fun PlantApp(){
             Box(modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 40.dp), contentAlignment = Alignment.Center) {
-                Button(onClick = {  },
+                val mContext = LocalContext.current
+                Button(onClick = {
+                    //to About Activity
+                    mContext.startActivity(Intent(mContext,AboutActivity::class.java))
+                },
                 colors = ButtonDefaults.buttonColors(Color(0xFF164E17)),
                     modifier = Modifier.width(150.dp).height(50.dp)
                 ) {

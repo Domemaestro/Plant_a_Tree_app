@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Plant a Tree app</string>
+    <string name="title_activity_about">AboutActivity</string>
 </resources>
