@@ -85,7 +85,7 @@ fun AboutTab(){
                         fontWeight = FontWeight.Bold, fontSize = 25.sp, textAlign = TextAlign.Center
                     )
                     Text(text = "Kerala is actively promoting the planting of trees to combat deforestation and climate change. The state government has launched initiatives like Haritha Keralam Mission to increase the forest cover and encourage individuals and communities to participate in tree planting efforts. Planting more trees in Kerala will not only help combat climate change but also contribute to the state's rich biodiversity and ensure a better tomorrow for generations to come.",
-                    modifier = Modifier.padding(20.dp), textAlign = TextAlign.Center, color = Color.Black,
+                    modifier = Modifier.padding(20.dp), textAlign = TextAlign.Justify, color = Color.Black,
                     fontSize = 18.sp)
                 }
             }
