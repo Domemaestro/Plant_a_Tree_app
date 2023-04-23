@@ -1,17 +1,23 @@
 package com.example.plantatreeapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -22,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -68,6 +75,22 @@ fun AboutTab(){
                 Text(text = "Kerala",
                 color = Color.White,
                 fontSize = 47.sp, modifier = Modifier.padding(start = 16.dp, bottom = 60.dp))
+            }
+            Box(modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)) {
+                val mContext = LocalContext.current
+                Button(onClick = {
+                    mContext.startActivity(Intent(mContext,MainActivity::class.java))
+                }, colors = ButtonDefaults.buttonColors(Color.White),
+                shape = CircleShape, modifier = Modifier.size(55.dp),
+                    contentPadding = PaddingValues(0.dp) //Avoid small icon/Image
+                ) {
+                    val backArrow = painterResource(id = R.drawable.back_arrow)
+                    Image(painter = backArrow, contentDescription = "back Button", modifier = Modifier.padding(start = 8.dp))
+
+                }
+                
             }
         }
         //second Box
