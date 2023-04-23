@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
 //    )
 //}
 fun PlantApp(){
-    val brush = Brush.verticalGradient(listOf(Color.White, Color(0xFF367020)))
+    val brush = Brush.verticalGradient(listOf(Color.White, Color(0xFF264E17)))
     Column(modifier = Modifier
         .fillMaxSize()
         .background(brush = brush)) {
@@ -105,14 +105,17 @@ fun PlantApp(){
                     val image = painterResource(id = R.drawable.kerela)
                     Image(painter = image, contentDescription = null, contentScale = ContentScale.Crop)
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart) {
-                        Text(text = "Kerela",
-                            color = Color.White,
-                            fontSize = 42.sp,
-                            modifier = Modifier.padding(start = 16.dp)
-                        )
+                        Column() {
+                            Text(text = "Kerela",
+                                color = Color.White,
+                                fontSize = 42.sp,
+                                modifier = Modifier.padding(start = 16.dp)
+                            )
+                            Text(text ="Kerala is actively promoting tree planting to combat deforestation and climate change, and has launched initiatives like Haritha Keralam Mission to increase the forest cover.",
+                                color = Color.White, modifier = Modifier.padding(16.dp))
+                        }
                     }
                 }
-
 
             }
         }
