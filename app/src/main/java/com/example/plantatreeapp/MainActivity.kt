@@ -29,6 +29,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -90,15 +91,17 @@ fun PlantApp(){
             .fillMaxWidth()
             .padding(top = 50.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             //Middle part Section 2
-            Text(text = "We are Planting!!",
-            fontWeight = FontWeight.Bold,
-            color = Color(0xFF264E17),
-            modifier = Modifier.padding(bottom = 20.dp))
+            Box(modifier = Modifier.fillMaxWidth()) {
+                Text(text = "Planting Location",
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF264E17),
+                    modifier = Modifier.padding(bottom = 20.dp, start = 16.dp), textAlign = TextAlign.Start)
+            }
 
             Card(elevation = CardDefaults.cardElevation(10.dp),
                 shape = RoundedCornerShape(30.dp),
                 modifier = Modifier
-                    .width(300.dp)
+                    .width(350.dp)
                     .height(350.dp)
                     ) {
                 Box() {
