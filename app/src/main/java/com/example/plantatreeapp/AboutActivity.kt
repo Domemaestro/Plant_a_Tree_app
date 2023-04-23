@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -79,11 +80,13 @@ fun AboutTab(){
             ) {
                 Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        text = "Title",
-                    color = Color(0xFF367020), modifier = Modifier.padding(top = 20.dp),
-                        fontWeight = FontWeight.Bold, fontSize = 25.sp
+                        text = "Planting Trees for a Better Tomorrow: Kerala's Mission ",
+                    color = Color(0xFF367020), modifier = Modifier.padding(20.dp),
+                        fontWeight = FontWeight.Bold, fontSize = 25.sp, textAlign = TextAlign.Center
                     )
-                    Text(text = "Description")
+                    Text(text = "Kerala is actively promoting the planting of trees to combat deforestation and climate change. The state government has launched initiatives like Haritha Keralam Mission to increase the forest cover and encourage individuals and communities to participate in tree planting efforts. Planting more trees in Kerala will not only help combat climate change but also contribute to the state's rich biodiversity and ensure a better tomorrow for generations to come.",
+                    modifier = Modifier.padding(20.dp), textAlign = TextAlign.Center, color = Color.Black,
+                    fontSize = 18.sp)
                 }
             }
         }
