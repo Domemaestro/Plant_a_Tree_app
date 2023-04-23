@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -57,23 +59,32 @@ fun AboutTab(){
         //top Box
         Box(modifier = Modifier
             .fillMaxWidth()
-            .height(300.dp)) {
+            .height(400.dp)) {
             val image = painterResource(id = R.drawable.kerela)
             Image(painter = image, contentDescription = null, contentScale = ContentScale.Crop)
 
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart) {
                 Text(text = "Kerala",
                 color = Color.White,
-                fontSize = 47.sp, modifier = Modifier.padding(start = 16.dp, bottom = 50.dp))
+                fontSize = 47.sp, modifier = Modifier.padding(start = 16.dp, bottom = 60.dp))
             }
         }
         //second Box
         Box(modifier = Modifier.fillMaxSize()) {
             Card(elevation = CardDefaults.cardElevation(20.dp),
             shape = RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp),
-                modifier = Modifier.fillMaxSize().padding(top = 260.dp)
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 350.dp)
             ) {
-                
+                Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Title",
+                    color = Color(0xFF367020), modifier = Modifier.padding(top = 20.dp),
+                        fontWeight = FontWeight.Bold, fontSize = 25.sp
+                    )
+                    Text(text = "Description")
+                }
             }
         }
     }
