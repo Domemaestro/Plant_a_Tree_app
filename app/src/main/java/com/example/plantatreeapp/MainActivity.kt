@@ -1,6 +1,7 @@
 package com.example.plantatreeapp
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -14,6 +15,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
@@ -95,18 +99,19 @@ fun PlantApp(){
                 Text(text = "Planting Location",
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFF264E17),
-                    modifier = Modifier.padding(bottom = 20.dp, start = 16.dp), textAlign = TextAlign.Start)
+                    modifier = Modifier.padding(bottom = 20.dp, start = 30.dp), textAlign = TextAlign.Start)
             }
 
             Card(elevation = CardDefaults.cardElevation(10.dp),
                 shape = RoundedCornerShape(30.dp),
                 modifier = Modifier
                     .width(350.dp)
-                    .height(350.dp)
+                    .height(370.dp)
                     ) {
                 Box() {
                     val image = painterResource(id = R.drawable.kerela)
-                    Image(painter = image, contentDescription = null, contentScale = ContentScale.Crop)
+                    Image(painter = image, contentDescription = null, contentScale = ContentScale.Crop,
+                        )
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart) {
                         Column() {
                             Text(text = "Kerela",
@@ -119,8 +124,21 @@ fun PlantApp(){
                         }
                     }
                 }
-
+                //cardview end
             }
+            Box(modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 40.dp), contentAlignment = Alignment.Center) {
+                Button(onClick = {  },
+                colors = ButtonDefaults.buttonColors(Color(0xFF164E17)),
+                    modifier = Modifier.width(150.dp).height(50.dp)
+                ) {
+                    Text(
+                        text = "About",
+                    fontSize = 20.sp)
+                }
+            }
+
         }
     }
 }
